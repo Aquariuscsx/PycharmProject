@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/common.css" type="text/css">
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script language="JavaScript">
+        $(function () {
+            $('#cate>ul>li').mouseover(function () {
+                $div = $(this).find('div').css('display', 'block')
+            });
+            $('#cate>ul>li').mouseout(function () {
+                $('#cate>ul>li').find('div').css('display', 'none')
+            })
+        })
+
+    </script>
+    <style type="text/css">
+
+        #cate > ul > li:hover {
+            display: block;
+            background: cornflowerblue;
+        }
+        #cate > ul > li {
+
+            background: darkgray;
+            width: 80px;
+        }
+
+        #cate > ul > li:hover #sub {
+            display: block;
+
+        }
+        #sub>ul>li>{
+            padding: 10px;
+            float: left;
+
+        }
+
+        #sub{
+            display: none;
+            position: absolute;
+            float: left;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="cate" class="clear">
+    <ul>
+        {% for cate in cate_list %}
+            <li><a>{{ cate.name }}</a>
+                <div id="sub" class="clear">
+                    <ul>
+                        {% for cate_sub in cate.cate %}
+                            <li><a>{{ cate_sub.name }}</a></li>
+
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+</div>
+
+</body>
+</html>

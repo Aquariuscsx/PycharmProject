@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/common.css" type="text/css">
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script src="/static/js/unslider.min01.js"></script>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="/static/js/home.js"></script>
+
+   <!-- <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        #header{
+            padding: 5px;
+        }
+
+        a, span {
+            text-decoration: none;
+            font-size: 12px;
+            color: black;
+        }
+
+        .top_left {
+            margin-left: 100px;
+            float: left;
+            padding: 5px;
+        {#background: brown;#}
+        }
+
+        .top_right {
+            padding: 5px;
+            margin-right: 50px;
+            float: right;
+        }
+
+        #header_top {
+            background: aqua;
+            height: 40px;
+        }
+
+        .header_test {
+            background: #FF0000;
+            width: 350px;
+            height: 40px;
+            float: left;
+            position: relative;
+            left: 400px;
+        }
+
+        #search_inp {
+            padding: 5px;
+            width: 70%;
+            margin: 0px 0 0px 0px;
+        }
+
+        #search_btn {
+            font-size: 18px;
+            padding: 5px;
+            margin-left: 2px;
+            background: #FF0000;
+            border: 0px;
+        }
+
+        #search_inp_bou > a {
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        #search_inp_bou > span {
+            font-size: 16px;
+
+        }
+
+        #rail > ul > li {
+            float: left;
+            position: relative;
+            top: 10px;
+            left: 200px;
+            margin: 20px;
+
+        }
+
+        #rail {
+            width: 100%;
+            height: 40px;
+            background: #FF0000;
+            position: relative;
+            top: 20px;
+        }
+
+        .sub > li > a {
+            background: white;
+            height: 500px;
+            width: 1180px;
+            float: left;
+            right: 200px;
+            position: relative;
+            left: 137px;
+            bottom: 502px;
+            padding: 10px;
+        }
+
+        .sub:hover {
+            display: none;
+        }
+
+        #cates {
+            width: 140px;
+            height: 500px;
+            background: #666666;
+            position: relative;
+            top: 0px;
+
+        }
+
+        #cates > ul > li{
+
+            padding: 3px;
+        }
+
+        #cates > ul > li>a{
+
+            font-size: 15px;
+        }
+
+
+        #cate > li:hover{
+            background: white;
+        }
+        .sub>li:hover{
+            background: white;
+            width: 1180px;
+            height: 500px;
+        }
+
+        #content h3 {
+            font-size: 18px;
+            padding: 10px;
+            font-weight: bold;
+            border-left: 5px solid aqua;
+        }
+
+        #content h3 {
+            border-left: 5px solid aqua;
+        }
+
+        #content li {
+            margin: 2px;
+            padding: 10px;
+            float: left;
+            width: 18%;
+        }
+        #head_cate{
+            background: #666666;
+            position: relative;
+            top: 20px;
+        }
+
+
+        #cates {
+            margin-left: 80px;
+            height: 500px;
+            position: absolute;
+            z-index: 2;
+        }
+        .banner {
+            z-index: 1;
+            margin-left: 120px;
+            text-align: center;
+        }
+        #content{
+            position: relative;
+            top: 10px;
+        }
+
+
+    </style>
+    <style type="text/css">
+        .banner ul {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .banner ul li {
+            float: left;
+            overflow: hidden;
+        }
+
+        .banner .dots {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+        }
+
+        .banner .dots li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 4px;
+            text-indent: -999em;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: .4;
+            -webkit-transition: background .5s, opacity .5s;
+            -moz-transition: background .5s, opacity .5s;
+            transition: background .5s, opacity .5s;
+        }
+
+        .banner .dots li.active {
+            background: #fff;
+            opacity: 1;
+        }
+
+        .banner {
+            position: absolute;
+            left: 100px;
+
+        }
+
+    </style>-->
+    <!--<script language="JavaScript">
+        //取图片加菜单
+        let shops_url = 'http://127.0.0.1:8000/home/shops/';
+        let IMG_URLS = 'http://127.0.0.1:8000/static/img/productSingle_middle/';
+        $(function () {
+
+            $.get(shops_url, function (result) {
+                if (result != null && result.state === 200 && result.data.length > 0) {
+                    let $content = $('#content');
+                    for (let cate of result.data) {
+                        let $div = $('<div>');
+                        let $h3 = $('<h3>').text(cate.name);
+                        let $ul = $('<ul>').attr('class', 'clear');
+                        if (cate.products.length > 0) {
+                            for (let product of cate.products) {
+                                let $li = $('<li>');
+                                let $a = $('<a>');
+                                $a.append($('<img>').attr('src', IMG_URLS + product.imgs[0].id + '.jpg'))
+                                    .append($('<br>'))
+                                    .append($('<span>').text(product.name))
+                                    .append($('<br>'))
+                                    .append($('<span>').text(product.promoteprice));
+                                $li.append($a);
+                                $ul.append($li)
+                            }
+                        }
+                        $('#content').append($div.append($h3).append($ul));
+                    }
+
+                }
+            })
+        })
+    </script>
+    <script language="JavaScript">
+        //搜索商品信息
+        let IMG_URL = 'http://127.0.0.1:8000/static/img/productSingle_middle/';
+
+        //点击搜索
+        $(function () {
+            $('#search_btn').click(function () {
+                let keywords = $('#search_inp').val();
+                let search_url = 'http://127.0.0.1:8000/home/search/?key=' + keywords;
+                $.getJSON(search_url, function (result) {
+                    if (result.state === 200) {
+                        let $ul = $('#search_shops');
+                        for (let index in result.data) {
+                            let product = result.data[index];
+                            let $li = $('<li>');
+                            $('<img>').attr('src', IMG_URL + product.img_list[0].id + '.jpg').appendTo($li);
+                            $('<p>').text('¥' + product.promoteprice).appendTo($li);
+                            $('<a>').attr('href', 'product?pid = ' + product.id).text(product.name).appendTo($li);
+                            $('<a>').attr('href', 'product?pid = ' + product.id).text('天猫专卖').appendTo($li);
+                            $ul.append($li)
+                        }
+                    } else {
+
+                    }
+                })
+            })
+        })
+    </script>
+    <script language="JavaScript">
+        //分类菜单加轮播图
+        $(function () {
+            init();
+
+        });
+
+        function init() {
+            load_data();
+            init_cate();
+
+            init_banner();
+
+
+        }
+
+        //初始化
+        function load_data() {
+            let cate_url = 'http://127.0.0.1:8000/home/cate/';
+            let setting = {
+                type: 'GET',
+                success: function (result) {
+                    if (result.state === 200) {
+                        init_cate(result.data);
+                        init_banner(result.banners)
+                    }
+                }
+            };
+            $.ajax(cate_url, setting)
+        }
+
+        function init_cate(data) {
+            let $cate_ul = $('#cate').mouseout(function () {
+                $('.sub').css('display', 'none')
+            });
+            for (let cate of data) {
+                $('<li>').mouseover(function () {
+                    let $ul = $('.sub').empty().css('display', 'block');
+                    for (let sub of cate.subs) {
+                        $('<li>').append($('<a>').text(sub.name)).appendTo($ul)
+                    }
+                }).append($('<a>').text(cate.name)).appendTo($cate_ul)
+            }
+        }
+
+        function init_banner(banners) {
+            let IMG_URL = 'http://127.0.0.1:8000';
+            let $banner_ul = $('.banner>ul');
+            for (let banner of banners) {
+                $('<li>').append($('<a>').append($('<img>').attr('src', IMG_URL + banner.img))).appendTo($banner_ul)
+            }
+            lunbo()
+
+        }
+
+        function lunbo() {
+            $('.banner').unslider({
+                speed: 1000,
+                dots: true
+            })
+        }
+
+    </script>-->
+
+</head>
+
+
+<body>
+<div>
+    <div id="header" class="clear">
+        <div id="header_top" class="clear">
+            <div class="top_left">
+                <a><span><span></span> 天猫首页 喵</span></a>
+                <a href="/static/account/login.html"><span>登录</span></a>
+                <a href="/static/account/register.html"><span>注册</span></a>
+            </div>
+            <div class="top_right">
+                <a href="/static/shop/order.html">我的订单</a>
+                <a href="/static/shop/shopcar.html">购物车</a>
+            </div>
+        </div>
+        <div id="search">
+            <img src="" alt="">
+            <div class="header_test">
+                <input type="text" id="search_inp" placeholder="请输入商品名称">
+                <input type="button" value="搜索" id="search_btn"><br>
+                <div id="search_inp_bou">
+                    <a>平衡车</a>
+                    <span>|</span>
+                    <a>扫地机器人</a>
+                    <span>|</span>
+                    <a>原汁机</a>
+                    <span>|</span>
+                    <a>冰箱</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="search_content">
+            <ul id="search_shops" class="clear">
+
+            </ul>
+        </div>
+
+        <div id="rail" class="clear">
+            <!--导航条-->
+        </div>
+        <div id="head_cate" class="clear" style="height: 500px">
+            <div id="cates" class="clear">
+                <ul id="cate">
+                    <!-- 一级菜单-->
+                </ul>
+                <ul class="sub clear">
+                    <!-- 二级菜单-->
+                </ul>
+            </div>
+            <div class="banner">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="clear">
+        <div>
+
+        </div>
+
+        <!--<ul>
+
+            <li>
+                <a href="index.html">
+                <img src="img/productSingle/630.jpg" alt="">
+                <span>标题</span>
+                <span>价格</span>
+                </a>
+            </li>
+        </ul>-->
+    </div>
+
+    <div id="footer">
+
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#header {
+    padding: 5px;
+}
+
+a, span {
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+}
+
+.top_left {
+    margin-left: 100px;
+    float: left;
+    padding: 5px;
+}
+
+
+
+
+
+.top_right {
+    padding: 5px;
+    margin-right: 50px;
+    float: right;
+}
+
+#header_top {
+    background: aqua;
+    height: 40px;
+}
+
+.header_test {
+    background: #FF0000;
+    width: 350px;
+    height: 40px;
+    float: left;
+    position: relative;
+    left: 400px;
+}
+
+#search_inp {
+    padding: 5px;
+    width: 70%;
+    margin: 0px 0 0px 0px;
+}
+
+#search_btn {
+    font-size: 18px;
+    padding: 5px;
+    margin-left: 2px;
+    background: #FF0000;
+    border: 0px;
+}
+
+#search_inp_bou > a {
+    font-size: 12px;
+    padding: 10px;
+}
+
+#search_inp_bou > span {
+    font-size: 16px;
+
+}
+
+#rail > ul > li {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 200px;
+    margin: 20px;
+
+}
+
+#rail {
+    width: 100%;
+    height: 40px;
+    background: #FF0000;
+    position: relative;
+    top: 20px;
+}
+
+.sub > li > a {
+    background: white;
+    height: 500px;
+    width: 1180px;
+    float: left;
+    right: 200px;
+    position: relative;
+    left: 137px;
+    bottom: 502px;
+    padding: 10px;
+}
+
+.sub:hover {
+    display: none;
+}
+
+#cates {
+    width: 140px;
+    height: 500px;
+    background: #666666;
+    position: relative;
+    top: 0px;
+
+}
+
+#cates > ul > li {
+
+    padding: 3px;
+}
+
+#cates > ul > li > a {
+
+    font-size: 15px;
+}
+
+#cate > li:hover {
+    background: white;
+}
+
+.sub > li:hover {
+    background: white;
+    width: 1180px;
+    height: 500px;
+}
+
+#content h3 {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+    border-left: 5px solid aqua;
+}
+
+#content h3 {
+    border-left: 5px solid aqua;
+}
+
+#content li {
+    margin: 2px;
+    padding: 10px;
+    float: left;
+    width: 18%;
+}
+
+#head_cate {
+    background: #666666;
+    position: relative;
+    top: 20px;
+}
+
+#cates {
+    margin-left: 80px;
+    height: 500px;
+    position: absolute;
+    z-index: 2;
+}
+
+.banner {
+    z-index: 1;
+    margin-left: 120px;
+    text-align: center;
+}
+
+#content {
+    position: relative;
+    top: 10px;
+}
+
+.banner ul {
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner ul li {
+    float: left;
+    overflow: hidden;
+}
+
+.banner .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+}
+
+.banner .dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+
+.banner .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
+
+.banner {
+    position: absolute;
+    left: 100px;
+
+}
+
